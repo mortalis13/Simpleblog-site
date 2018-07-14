@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="system">
+	<name>System - Simpleblog Override</name>
+	<author>mortalis</author>
+	<creationDate>February 2015</creationDate>
+	<copyright>Copyright (C) 2015</copyright>
+	<license>GPL2</license>
+	<authorEmail>stangerroman@gmail.com</authorEmail>
+	<version>1.0.0</version>
+	<description>Override com_content classes for the Simpleblog template</description>
+	<files>
+		<filename plugin="simpleblogOverride">simpleblogOverride.php</filename>
+		<filename>index.html</filename>
+		<filename>category.php</filename>
+		<filename>icon.php</filename>
+		<filename>controller.php</filename>
+		<folder>fields</folder>
+	</files>
+
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.plg_system_simpleblogOverride.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.plg_system_simpleblogOverride.sys.ini</language>
+	</languages>
+</extension>

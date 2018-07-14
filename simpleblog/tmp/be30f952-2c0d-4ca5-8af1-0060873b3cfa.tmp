@@ -1,0 +1,236 @@
+ {
+	"categories":  {
+		"_root":  {
+			"published": "1",
+			"description": "",
+			"ordering": 0,
+			"name": "Root"
+		},
+		"uncategorised":  {
+			"parent": "_root",
+			"published": "1",
+			"description": "",
+			"ordering": 0,
+			"name": "Uncategorised"
+		},
+		"blog":  {
+			"parent": "_root",
+			"published": "1",
+			"description": "",
+			"ordering": 6,
+			"name": "Blog"
+		}
+	},
+	"items":  {
+		"create-your-simple-blog":  {
+			"state": "1",
+			"created": "2015-02-03 11:42:30",
+			"modified": "2015-02-03 11:49:23",
+			"hits": "37",
+			"access": "1",
+			"publish_up": "2015-02-03 11:42:30",
+			"publish_down": "0000-00-00 00:00:00",
+			"metadata":  {
+				"description": "",
+				"keywords": "",
+				"robots": "",
+				"author": ""
+			},
+			"author": "mortalis",
+			"categories":  {
+				"0": "uncategorised"
+			},
+			"elements":  {
+				"0":  {
+					"type": "textarea",
+					"name": "Article",
+					"data":  {
+						"0":  {
+							"value": "<h1>Create your simple blog<\/h1>"
+						},
+						"1":  {
+							"value": ""
+						}
+					}
+				}
+			},
+			"group": "Joomla article",
+			"name": "Create your simple blog"
+		},
+		"peter-tries-one-more":  {
+			"state": "1",
+			"created": "2015-02-03 15:52:04",
+			"modified": "0000-00-00 00:00:00",
+			"hits": "0",
+			"access": "1",
+			"publish_up": "2015-02-03 15:52:04",
+			"publish_down": "0000-00-00 00:00:00",
+			"metadata":  {
+				"description": "",
+				"keywords": "",
+				"robots": null,
+				"author": null
+			},
+			"author": "peter",
+			"categories":  {
+				"0": "uncategorised"
+			},
+			"elements":  {
+				"0":  {
+					"type": "textarea",
+					"name": "Article",
+					"data":  {
+						"0":  {
+							"value": "Purus amet gravida orci, dolor quis justo id vitae quis quam, ante vel nulla sed varius. Libero sit et et arcu, in facilisis elit laoreet dolor fusce, sapien libero dictumst auctor dictum. Nam donec donec sollicitudin dolor iaculis tincidunt, ullamcorper a aliquip luctus sit lectus. Sed accumsan, ipsum libero ante, nam non. Eget a lectus. Neque amet rutrum pede sed mattis, orci a praesent class, pretium arcu felis augue elementum, rutrum pede porta justo libero pede habitasse, ullamcorper iaculis pellentesque vel proin non. Ipsum quam metus, suscipit vestibulum at, duis vel sit, hymenaeos rutrum risus curabitur nunc mauris ipsum, eu et lacinia tellus a luctus faucibus.\r\nEleifend aenean ante semper elit diam, curabitur non semper vestibulum congue tempor urna, amet ridiculus, curabitur elit viverra suspendisse luctus. Vel amet placerat lacinia eros non. Magna etiam consequat orci posuere dignissim arcu, quia sit in adipiscing in, in libero morbi suspendisse imperdiet. Condimentum ullamcorper nonummy a rutrum est. At ut sed pharetra nec pharetra, ligula ut lacus egestas lorem id rerum, porta tellus pellentesque pellentesque vitae, a odio habitant interdum sed, ante morbi rhoncus ac vulputate ut. Felis vel sed faucibus. Accumsan hendrerit libero proin cum, dictum nam, vivamus bibendum mauris amet sed nullam tristique. Blandit accumsan, sollicitudin est congue turpis et vestibulum, gravida nec dictumst dolor, amet adipiscing cras at convallis justo odio. Ultrices urna, malesuada vel facilisi penatibus pretium lacus, ultrices nascetur libero in suscipit lectus proin, suspendisse augue tristique nunc egestas urna."
+						},
+						"1":  {
+							"value": ""
+						}
+					}
+				}
+			},
+			"group": "Joomla article",
+			"name": "Peter tries one more..."
+		},
+		"the-super-user-article":  {
+			"state": "1",
+			"created": "2015-01-20 12:02:07",
+			"modified": "2015-02-03 13:28:19",
+			"hits": "10",
+			"access": "1",
+			"publish_up": "2015-01-20 12:02:07",
+			"publish_down": "0000-00-00 00:00:00",
+			"metadata":  {
+				"description": "",
+				"keywords": "",
+				"robots": "",
+				"author": ""
+			},
+			"author": "mortalis",
+			"categories":  {
+				"0": "blog"
+			},
+			"elements":  {
+				"0":  {
+					"type": "textarea",
+					"name": "Article",
+					"data":  {
+						"0":  {
+							"value": "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.<\/p>\r\n<p>Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.<\/p>\r\n<p>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.<\/p>\r\n<p>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.<\/p>"
+						},
+						"1":  {
+							"value": ""
+						}
+					}
+				}
+			},
+			"group": "Joomla article",
+			"name": "The Super user article"
+		},
+		"the-peter-article":  {
+			"state": "1",
+			"created": "2015-01-25 12:36:05",
+			"modified": "2015-02-03 13:27:19",
+			"hits": "5",
+			"access": "1",
+			"publish_up": "2015-01-25 12:36:05",
+			"publish_down": "0000-00-00 00:00:00",
+			"metadata":  {
+				"description": "",
+				"keywords": "",
+				"robots": "",
+				"author": ""
+			},
+			"author": "peter",
+			"categories":  {
+				"0": "blog"
+			},
+			"elements":  {
+				"0":  {
+					"type": "textarea",
+					"name": "Article",
+					"data":  {
+						"0":  {
+							"value": "<p>Lorem ipsum dolor sit amet, quis metus libero urna sed, augue consectetuer ligula dapibus ligula. Erat quam elit augue magna sed vel, cursus integer. Arcu vel vel eu ut, ultricies eu rutrum vel vestibulum aliquam, erat in fermentum sed est sagittis in, massa ultricies integer morbi sit, quis rhoncus et ac deserunt. Lacinia et ipsum placerat, semper cubilia ut. Leo nec, maecenas lobortis bibendum. Congue sed curabitur quam sed eget at, arcu at pharetra lobortis metus nec, sit a, eros aut. Semper libero etiam. Sit odio euismod. Dolorum justo mauris et. Commodo cum adipiscing vel malesuada lectus ac, vitae a sollicitudin nullam amet amet, metus placerat elit in vehicula justo, morbi felis vulputate ac lacus ac. Nulla morbi dolor, pede nunc sed orci, dolorem nunc pretium sapien non. Rhoncus cursus nonummy at tincidunt, tempor mauris ut ornare taciti, ligula mauris rhoncus fermentum sed, faucibus suspendisse, sed auctor. Hic nulla lectus, magna vel montes mauris feugiat porta, lorem vel fusce nulla, luctus dignissim erat suspendisse wisi hac accumsan. Vestibulum donec porta, commodo lectus est sodales curabitur est, ut dictum lobortis, fames vitae luctus neque phasellus. Nulla metus, enim quis orci tristique, inventore per quo metus sem justo. Ullamcorper placerat porta curabitur cubilia vitae, ullam magnis at nascetur adipiscing, metus erat tincidunt id. Sapien sagittis suspendisse, ultrices egestas lorem, rhoncus nisl cursus in, eget rhoncus velit metus.<\/p>"
+						},
+						"1":  {
+							"value": ""
+						}
+					}
+				}
+			},
+			"group": "Joomla article",
+			"name": "The Peter's article"
+		},
+		"the-jack-s-atricle":  {
+			"state": "1",
+			"created": "2015-01-27 12:40:01",
+			"modified": "2015-02-03 13:29:09",
+			"hits": "3",
+			"access": "1",
+			"publish_up": "2015-01-27 12:40:01",
+			"publish_down": "0000-00-00 00:00:00",
+			"metadata":  {
+				"description": "",
+				"keywords": "",
+				"robots": "",
+				"author": ""
+			},
+			"author": "jack",
+			"categories":  {
+				"0": "blog"
+			},
+			"elements":  {
+				"0":  {
+					"type": "textarea",
+					"name": "Article",
+					"data":  {
+						"0":  {
+							"value": "<p>Nunc arcu arcu in nulla nunc molestie. Ligula torquent molestie mus pulvinar est, id elit at, lectus fringilla cras, duis bibendum habitasse, morbi non tellus amet. Suscipit nunc lectus massa risus orci, sit mauris proin ut nec auctor. At magna, quis etiam diam, curabitur dolor duis nibh proin. Ut varius, natoque rutrum lectus, condimentum arcu, et mattis urna per aliquet urna. Magna dapibus voluptatem, nam arcu, vitae est suspendisse, sit dolor rutrum vivamus. Orci integer. Arcu dignissim nullam eu, neque viverra saepe hymenaeos sed nibh. Vulputate turpis pede curabitur, odio sollicitudin hymenaeos dignissim, vestibulum sed sed id pede non sodales, rhoncus eu nulla, sed sapien dolor. Conubia fermentum amet bibendum ac massa ac, amet ullamcorper etiam augue tellus. Massa at purus nulla orci dolor ullamcorper. Massa praesent. Sit et ultricies varius sit, urna in, fusce neque ullamcorper nibh tristique pellentesque, et lacus ac vitae, sed justo. Ullamcorper id velit mauris, wisi adipiscing erat, elit nulla quam nullam lacus dui.<\/p>"
+						},
+						"1":  {
+							"value": ""
+						}
+					}
+				}
+			},
+			"group": "Joomla article",
+			"name": "The Jack's atricle"
+		},
+		"the-rose-s-article":  {
+			"state": "1",
+			"created": "2015-02-03 12:40:49",
+			"modified": "0000-00-00 00:00:00",
+			"hits": "5",
+			"access": "1",
+			"publish_up": "2015-02-03 12:40:49",
+			"publish_down": "0000-00-00 00:00:00",
+			"metadata":  {
+				"description": "",
+				"keywords": "",
+				"robots": null,
+				"author": null
+			},
+			"author": "rose",
+			"categories":  {
+				"0": "blog"
+			},
+			"elements":  {
+				"0":  {
+					"type": "textarea",
+					"name": "Article",
+					"data":  {
+						"0":  {
+							"value": "Congue ut ipsum mollis at ut mi. Error non erat, sollicitudin aliquam sit enim primis, orci urna metus. Mauris condimentum, praesent dolor eros nunc vitae, ac dapibus mauris a erat magna urna. Feugiat pharetra laoreet, tortor elementum vitae, eu eleifend commodo et quis ultricies conubia, nulla conubia habitasse leo orci in, turpis convallis pellentesque velit nec. Lacus vestibulum nulla tortor, dui montes proident quisque fringilla. Faucibus sed vel consequuntur lectus, morbi curae non ipsum nullam ut nec, lorem ultrices dolorum ligula lectus nascetur nec, duis nulla pharetra praesent, placerat tristique. Vel id aliquet, adipiscing nullam pede a id euismod quam, duis turpis. Id aenean nibh at pulvinar volutpat, velit ut vulputate aliquam doloribus, et eget accumsan. Nulla ac sociis elementum enim porta suscipit. Justo tortor dolor deserunt mi, cras purus parturient. Ac lacinia dolor congue vel, a et risus justo amet, nec rutrum, amet justo arcu justo, faucibus vitae posuere sollicitudin tempus aliquam amet."
+						},
+						"1":  {
+							"value": ""
+						}
+					}
+				}
+			},
+			"group": "Joomla article",
+			"name": "The Rose's article"
+		}
+	}
+}

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "http://www.joomla.org/xml/dtd/2.5/template-install.dtd">
+<extension version="3.1" type="template" client="site">
+	<name>simpleblog</name>
+	<version>1.0</version>
+	<creationDate>February 2015</creationDate>
+	<author>Roman Swift</author>
+	<authorEmail>stangerroman@gmail.com</authorEmail>
+	<copyright>Copyright (C) 2015</copyright>
+	<description>TPL_SIMPLEBLOG_XML_DESCRIPTION</description>
+
+	<files>
+		<filename>component.php</filename>
+		<filename>favicon.ico</filename>
+		<filename>index.html</filename>
+		<filename>index.php</filename>
+		<filename>template_preview.png</filename>
+		<filename>template_thumbnail.png</filename>
+		<folder>css</folder>
+		<folder>html</folder>
+		<folder>img</folder>
+		<folder>includes</folder>
+		<folder>js</folder>
+		<folder>language</folder>
+	</files>
+
+	<positions>
+		<position>top-menu</position>
+		<position>banner</position>
+		<position>breadcrumbs</position>
+		<position>right</position>
+		<position>footer</position>
+		<position>debug</position>
+	</positions>
+
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.tpl_simpleblog.ini</language>
+		<language tag="en-GB">en-GB/en-GB.tpl_simpleblog.sys.ini</language>
+	</languages>
+
+	<config>
+		<fields name="params">
+			<fieldset name="advanced">
+				<field name="templateColor" class="" type="color" default="#08C"
+					label="TPL_SIMPLEBLOG_COLOR_LABEL"
+					description="TPL_SIMPLEBLOG_COLOR_DESC" />
+
+				<field name="templateBackgroundColor" class="" type="color" default="#F4F6F7"
+					label="TPL_SIMPLEBLOG_BACKGROUND_COLOR_LABEL"
+					description="TPL_SIMPLEBLOG_BACKGROUND_COLOR_DESC" />
+
+				<field name="logoFile" class="" type="media" default=""
+					label="TPL_SIMPLEBLOG_LOGO_LABEL"
+					description="TPL_SIMPLEBLOG_LOGO_DESC" />
+					
+				<field name="sitetitle"  type="text" default=""
+					label="JGLOBAL_TITLE"
+					description="JFIELD_ALT_PAGE_TITLE_LABEL"
+					filter="string" />
+
+				<field name="sitedescription"  type="text" default=""
+					label="JGLOBAL_DESCRIPTION"
+					description="JGLOBAL_SUBHEADING_DESC"
+					filter="string" />
+			</fieldset>
+		</fields>
+	</config>
+
+</extension>

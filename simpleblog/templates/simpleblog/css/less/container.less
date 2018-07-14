@@ -1,0 +1,68 @@
+
+@import "lib/vars.less"; 
+
+body{
+  font-size: 13px;
+}
+
+body.site {
+  text-align: justify;
+  font-family: @fontFamily;
+  padding: 20px;
+  .bodyBackground;
+  color: #333;
+  margin: 0;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.body > .container {
+  background-color: #fcfcfc;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 20px;
+  padding: 45px 20px 20px;
+  border: 1px solid rgba(0,0,0,0.15);
+  -moz-box-shadow: 0px 0px 6px rgba(0,0,0,0.05);
+  -webkit-box-shadow: 0px 0px 6px rgba(0,0,0,0.05);
+  box-shadow: 0px 0px 6px rgba(0,0,0,0.05);
+}
+
+.container {
+  width:@widthCustom;
+}
+
+.body > .container .header{
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1.5em;
+  margin-bottom: 1em;
+}
+
+.body > .container,
+.footer > .container {
+  margin-right: auto;
+  margin-left: auto;
+  *zoom: 1;
+}
+
+.body >.container:before,
+.container:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.body >.container:after {
+  clear: both;
+}
+
+.site-title {
+  font-size: 40px;
+  line-height: 48px;
+  font-weight: bold;
+}
+
+.header a:hover,
+.header a:active,
+.header a:focus{
+  text-decoration: none;
+}

@@ -1,0 +1,567 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" version="2.5" group="content" method="upgrade">
+	<name>plg_content_articledetails</name>
+	<version>2.0.5</version>
+	<creationDate>09/17/2011</creationDate>
+	<copyright>Copyright (C) 2011 Simplify Your Web. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later</license>	
+	<author>Olivier Buisard</author>
+	<authorEmail>olivier.buisard@simplifyyourweb.com</authorEmail>
+	<authorUrl>www.simplifyyourweb.com</authorUrl>
+	<description>PLG_CONTENT_ARTICLEDETAILS_XML_DESCRIPTION</description>
+	<scriptfile>installer.php</scriptfile>
+	<files>
+		<filename plugin="articledetails">articledetails.php</filename>
+		<filename>index.html</filename>
+		<filename>license.txt</filename>
+		<filename>stylemaster.css.php</filename>
+		<folder>fields</folder>
+		<folder>helpers</folder>
+		<folder>images</folder>
+		<folder>styles</folder>
+	</files>
+	<languages>
+	   <language tag="en-GB">language/en-GB/en-GB.plg_content_articledetails.ini</language>
+	   <language tag="en-GB">language/en-GB/en-GB.plg_content_articledetails.sys.ini</language>
+	   <language tag="fr-FR">language/fr-FR/fr-FR.plg_content_articledetails.ini</language>
+	   <language tag="fr-FR">language/fr-FR/fr-FR.plg_content_articledetails.sys.ini</language>
+	   <language tag="es-ES">language/es-ES/es-ES.plg_content_articledetails.ini</language>
+	   <language tag="es-ES">language/es-ES/es-ES.plg_content_articledetails.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params" addfieldpath="/plugins/content/articledetails/fields">
+		
+			<fieldset name="basic" addfieldpath="/libraries/syw/fields">
+				
+				<field type="sywlibtest" minversion="1.1.2" downloadlink="http://www.simplifyyourweb.com/index.php/downloads/category/23-libraries" />
+			
+				<field type="extensionlink" linktype="doc" link="http://www.simplifyyourweb.com/index.php/downloads/category/9-article-details#downloads" />				
+				<field type="extensionlink" linktype="forum" link="http://www.simplifyyourweb.com/index.php/forum/20-article-details" /> 				
+				<field type="extensionlink" linktype="demo" link="http://demo.simplifyyourweb.com/" />				
+				<!-- <field type="extensionlink" linktype="review" link="http://extensions.joomla.org/extensions/news-display/content-infos/article-date/25379" />				 -->
+				<field type="extensionlink" linktype="review" link="http://extensions.joomla.org/extensions/extension/news-display/content-infos/article-details" />				
+				<field type="extensionlink" linktype="donate" link="http://www.simplifyyourweb.com/index.php/downloads" />
+			</fieldset>
+			
+			<fieldset name="basic_custom" label="PLG_CONTENT_ARTICLEDETAILS_BASIC_FIELDSET_LABEL" description="PLG_CONTENT_ARTICLEDETAILS_BASIC_FIELDSET_DESC" addfieldpath="/libraries/syw/fields">
+
+				<field name="catid" type="category" extension="com_content" multiple="true" size="5" default="all" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_CATEGORY_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_CATEGORY_DESC">
+					<option value="all">JOPTION_ALL_CATEGORIES</option>
+				</field>
+				
+				<field name="includesubcategories" type="list" default="no" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_INCLUDESUBCATEGORIES_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_INCLUDESUBCATEGORIES_DESC">					
+					<option value="no">JNO</option>
+					<option value="onelevel">PLG_CONTENT_ARTICLEDETAILS_VALUE_ONELEVEL</option>
+					<option value="all">PLG_CONTENT_ARTICLEDETAILS_VALUE_ALLLEVELS</option>
+				</field>
+				
+				<field type="title" title="PLG_CONTENT_ARTICLEDETAILS_HEAD_LABEL" />
+				
+	            <field name="head_type" type="list" default="none" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_HEADTYPE_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_HEADTYPE_DESC">
+					<option value="none">JNONE</option>
+					<option value="calendar">PLG_CONTENT_ARTICLEDETAILS_VALUE_CALENDAR</option>
+				</field>
+				
+				<field name="head_w" type="text" default="64" filter="integer" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_HEAD_WIDTH_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_HEAD_WIDTH_DESC" />
+					
+				<field name="head_h" type="text" default="80" filter="integer" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_HEAD_HEIGHT_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_HEAD_HEIGHT_DESC" />	
+					
+				<field type="title" title="PLG_CONTENT_ARTICLEDETAILS_ARTICLETITLE_LABEL" />	
+					
+				<field name="t_tag" type="list" default="2" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_TITLETAG_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_TITLETAG_DESC">
+					<option value="1">h1</option>									
+					<option value="2">h2</option>				
+					<option value="3">h3</option>				
+					<option value="4">h4</option>				
+					<option value="5">h5</option>				
+					<option value="6">h6</option>
+				</field>
+		   </fieldset>
+		   
+		   <fieldset name="calendar" label="PLG_CONTENT_ARTICLEDETAILS_CALENDAR_FIELDSET_LABEL" description="PLG_CONTENT_ARTICLEDETAILS_CALENDAR_FIELDSET_DESC" addfieldpath="/libraries/syw/fields">				
+				
+	            <field name="post_d" type="list" default="published" 
+		           	label="PLG_CONTENT_ARTICLEDETAILS_FIELD_POSTDATE_LABEL" 
+		           	description="PLG_CONTENT_ARTICLEDETAILS_FIELD_POSTDATE_DESC">
+					<option value="created">PLG_CONTENT_ARTICLEDETAILS_VALUE_CREATED</option>
+					<option value="published">PLG_CONTENT_ARTICLEDETAILS_VALUE_PUBLISHED</option>
+					<option value="modified">PLG_CONTENT_ARTICLEDETAILS_VALUE_MODIFIED</option>
+					<option value="finished">PLG_CONTENT_ARTICLEDETAILS_VALUE_FINISHED</option>
+				</field>
+				
+				<field type="title" title="PLG_CONTENT_ARTICLEDETAILS_CONTENT_LABEL" />
+				
+				<field name="pos_1" type="list" default="w" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_POSITION1_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_POSITION1_DESC">
+					<option value="none">JNONE</option>
+					<option value="e">PLG_CONTENT_ARTICLEDETAILS_VALUE_EMPTY</option>
+					<option value="w">PLG_CONTENT_ARTICLEDETAILS_VALUE_WEEKDAY</option>
+					<option value="d">PLG_CONTENT_ARTICLEDETAILS_VALUE_DAY</option>
+					<option value="m">PLG_CONTENT_ARTICLEDETAILS_VALUE_MONTH</option>
+					<option value="y">PLG_CONTENT_ARTICLEDETAILS_VALUE_YEAR</option>
+					<option value="t">PLG_CONTENT_ARTICLEDETAILS_VALUE_TIME</option>
+				</field>
+				<field name="pos_2" type="list" default="d" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_POSITION2_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_POSITION2_DESC">
+					<option value="none">JNONE</option>
+					<option value="e">PLG_CONTENT_ARTICLEDETAILS_VALUE_EMPTY</option>
+					<option value="w">PLG_CONTENT_ARTICLEDETAILS_VALUE_WEEKDAY</option>
+					<option value="d">PLG_CONTENT_ARTICLEDETAILS_VALUE_DAY</option>
+					<option value="m">PLG_CONTENT_ARTICLEDETAILS_VALUE_MONTH</option>
+					<option value="y">PLG_CONTENT_ARTICLEDETAILS_VALUE_YEAR</option>
+					<option value="t">PLG_CONTENT_ARTICLEDETAILS_VALUE_TIME</option>
+				</field>
+				<field name="pos_3" type="list" default="m" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_POSITION3_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_POSITION3_DESC">
+					<option value="none">JNONE</option>
+					<option value="e">PLG_CONTENT_ARTICLEDETAILS_VALUE_EMPTY</option>
+					<option value="w">PLG_CONTENT_ARTICLEDETAILS_VALUE_WEEKDAY</option>
+					<option value="d">PLG_CONTENT_ARTICLEDETAILS_VALUE_DAY</option>
+					<option value="m">PLG_CONTENT_ARTICLEDETAILS_VALUE_MONTH</option>
+					<option value="y">PLG_CONTENT_ARTICLEDETAILS_VALUE_YEAR</option>
+					<option value="t">PLG_CONTENT_ARTICLEDETAILS_VALUE_TIME</option>
+				</field>
+				<field name="pos_4" type="list" default="y" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_POSITION4_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_POSITION4_DESC">
+					<option value="none">JNONE</option>
+					<option value="e">PLG_CONTENT_ARTICLEDETAILS_VALUE_EMPTY</option>
+					<option value="w">PLG_CONTENT_ARTICLEDETAILS_VALUE_WEEKDAY</option>
+					<option value="d">PLG_CONTENT_ARTICLEDETAILS_VALUE_DAY</option>
+					<option value="m">PLG_CONTENT_ARTICLEDETAILS_VALUE_MONTH</option>
+					<option value="y">PLG_CONTENT_ARTICLEDETAILS_VALUE_YEAR</option>
+					<option value="t">PLG_CONTENT_ARTICLEDETAILS_VALUE_TIME</option>
+				</field>
+				<field name="pos_5" type="list" default="t" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_POSITION5_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_POSITION5_DESC">
+					<option value="none">JNONE</option>
+					<option value="e">PLG_CONTENT_ARTICLEDETAILS_VALUE_EMPTY</option>
+					<option value="w">PLG_CONTENT_ARTICLEDETAILS_VALUE_WEEKDAY</option>
+					<option value="d">PLG_CONTENT_ARTICLEDETAILS_VALUE_DAY</option>
+					<option value="m">PLG_CONTENT_ARTICLEDETAILS_VALUE_MONTH</option>
+					<option value="y">PLG_CONTENT_ARTICLEDETAILS_VALUE_YEAR</option>
+					<option value="t">PLG_CONTENT_ARTICLEDETAILS_VALUE_TIME</option>
+				</field>
+				
+				<field type="title" title="PLG_CONTENT_ARTICLEDETAILS_FORMAT_LABEL" />
+				
+				<field name="fmt_w" type="radio" default="D" class="btn-group" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_WEEKDAYFORMAT_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_WEEKDAYFORMAT_DESC">
+					<option value="l">PLG_CONTENT_ARTICLEDETAILS_VALUE_WEEKDAYFORMAT_L</option>
+					<option value="D">PLG_CONTENT_ARTICLEDETAILS_VALUE_WEEKDAYFORMAT_D</option>
+				</field>
+				<field name="fmt_m" type="radio" default="M" class="btn-group" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_MONTHFORMAT_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_MONTHFORMAT_DESC">
+					<option value="F">PLG_CONTENT_ARTICLEDETAILS_VALUE_MONTHFORMAT_F</option>
+					<option value="M">PLG_CONTENT_ARTICLEDETAILS_VALUE_MONTHFORMAT_M</option>
+				</field>
+				<field name="fmt_d" type="radio" default="d" class="btn-group" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_DAYFORMAT_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_DAYFORMAT_DESC">
+					<option value="d">PLG_CONTENT_ARTICLEDETAILS_VALUE_DAYFORMAT_D</option>
+					<option value="j">PLG_CONTENT_ARTICLEDETAILS_VALUE_DAYFORMAT_J</option>
+				</field>
+
+				<field type="message" text="PLG_CONTENT_ARTICLEDETAILS_INFO_CALENDARTIMEFORMATINFO" style="info" />					
+				
+				<field type="title" title="PLG_CONTENT_ARTICLEDETAILS_STYLE_LABEL" />
+				
+				<field name="cal_style" type="styleselect" default="original" object="calendar"
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_STYLE_LABEL"
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_STYLE_DESC" />
+					
+				<field name="border_w" type="text" default="0" filter="integer" size="2" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_BORDERWIDTH_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_BORDERWIDTH_DESC" />
+					
+				<field name="border_r" type="text" default="0" filter="integer" size="2" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_BORDERRADIUS_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_BORDERRADIUS_DESC" />	
+				
+				<field name="sh_w" type="text" default="0" filter="integer" size="2" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_SHADOWWIDTH_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_SHADOWWIDTH_DESC" />	
+					
+				<field name="fontcalendar" type="fontpicker" default=""
+                    label="PLG_CONTENT_ARTICLEDETAILS_FIELD_FONTCALENDAR_LABEL"
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_FONTCALENDAR_DESC" />
+					
+				<field name="f_r" type="text" default="14" filter="integer" size="2"
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_FONTSIZEREFERENCE_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_FONTSIZEREFERENCE_DESC" />
+				
+				<field type="subtitle" title="PLG_CONTENT_ARTICLEDETAILS_CALENDARTOPCOLORS_LABEL" />
+				
+				<field name="c2" type="colorpicker" default="#494949"
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_COLOR2_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_COLOR2_DESC" />	
+				<field name="bgc21" type="colorpicker" default="" transparency="true" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_BGCOLOR21_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_BGCOLOR21_DESC" />	
+				<field name="bgc22" type="colorpicker" default="" transparency="true" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_BGCOLOR22_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_BGCOLOR22_DESC" />
+					
+				<field type="subtitle" title="PLG_CONTENT_ARTICLEDETAILS_CALENDARCOLORS_LABEL" />					
+					
+				<field name="c1" type="colorpicker" default="#3D3D3D"
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_COLOR1_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_COLOR1_DESC" />
+				<field name="bgc11" type="colorpicker" default="" transparency="true" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_BGCOLOR11_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_BGCOLOR11_DESC" />	
+				<field name="bgc12" type="colorpicker" default="" transparency="true" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_BGCOLOR12_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_BGCOLOR12_DESC" />
+					
+				<field type="subtitle" title="PLG_CONTENT_ARTICLEDETAILS_CALENDARBOTTOMCOLORS_LABEL" />
+				
+				<field name="c3" type="colorpicker" default="#494949"
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_COLOR3_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_COLOR3_DESC" />	
+				<field name="bgc31" type="colorpicker" default="" transparency="true" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_BGCOLOR31_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_BGCOLOR31_DESC" />	
+				<field name="bgc32" type="colorpicker" default="" transparency="true" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_BGCOLOR32_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_BGCOLOR32_DESC" />	
+			</fieldset>	
+			
+			<fieldset name="details" label="PLG_CONTENT_ARTICLEDETAILS_DETAILS_FIELDSET_LABEL" description="PLG_CONTENT_ARTICLEDETAILS_DETAILS_FIELDSET_DESC" addfieldpath="/libraries/syw/fields">
+													
+				<field name="d_f" type="text" default="80" filter="integer" size="3"
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_DETAILSFONTSIZE_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_DETAILSFONTSIZE_DESC" />
+				
+				<field name="detailsplace" type="list" default="after" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_DETAILSPLACE_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_DETAILSPLACE_DESC">
+					<option value="before">PLG_CONTENT_ARTICLEDETAILS_VALUE_BEFORETITLE</option>
+					<option value="after">PLG_CONTENT_ARTICLEDETAILS_VALUE_AFTERTITLE</option>
+				</field>
+				
+				<field name="separator" type="text" default="" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_SEPARATOR_LABEL"
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_SEPARATOR_DESC" />					
+					
+				<field type="subtitle" title="PLG_CONTENT_ARTICLEDETAILS_INFORMATION_LABEL" />
+				
+				<field name="show_icons_1" type="radio" default="0" class="btn-group" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_SHOWICONS_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_SHOWICONS_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>	
+				</field>
+				<field name="prepend_1" type="text" default="" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_PREPEND_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_PREPEND_DESC" />	
+				<field name="info_1" type="list" default="none"
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_INFO_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_INFO_DESC">
+					<option value="none">JNONE</option>
+					<option value="hits">PLG_CONTENT_ARTICLEDETAILS_VALUE_HITS</option>
+					<option value="rating">PLG_CONTENT_ARTICLEDETAILS_VALUE_RATING</option>
+					<option value="author">PLG_CONTENT_ARTICLEDETAILS_VALUE_AUTHOR</option>
+					<option value="created">PLG_CONTENT_ARTICLEDETAILS_VALUE_CREATEDDATE</option>
+					<option value="modified">PLG_CONTENT_ARTICLEDETAILS_VALUE_MODIFIEDDATE</option>
+					<option value="published">PLG_CONTENT_ARTICLEDETAILS_VALUE_PUBLISHEDDATE</option>
+					<option value="finished">PLG_CONTENT_ARTICLEDETAILS_VALUE_FINISHEDDATE</option>
+					<option value="createdtime">PLG_CONTENT_ARTICLEDETAILS_VALUE_CREATEDTIME</option>
+					<option value="modifiedtime">PLG_CONTENT_ARTICLEDETAILS_VALUE_MODIFIEDTIME</option>
+					<option value="publishedtime">PLG_CONTENT_ARTICLEDETAILS_VALUE_PUBLISHEDTIME</option>
+					<option value="finishedtime">PLG_CONTENT_ARTICLEDETAILS_VALUE_FINISHEDTIME</option>
+					<option value="parentcategory">PLG_CONTENT_ARTICLEDETAILS_VALUE_PARENTCATEGORY</option>
+					<option value="category">PLG_CONTENT_ARTICLEDETAILS_VALUE_CATEGORY</option>
+					<option value="combocategories">PLG_CONTENT_ARTICLEDETAILS_VALUE_COMBOCATEGORIES</option>
+					<option value="tags">PLG_CONTENT_ARTICLEDETAILS_VALUE_TAGS</option>
+					<option value="linkedtags">PLG_CONTENT_ARTICLEDETAILS_VALUE_LINKEDTAGS</option>
+					<option value="keywords">PLG_CONTENT_ARTICLEDETAILS_VALUE_KEYWORDS</option>
+					<option value="newline">PLG_CONTENT_ARTICLEDETAILS_VALUE_NEWLINE</option>
+				</field>	
+				
+				<field type="subtitle" title="PLG_CONTENT_ARTICLEDETAILS_INFORMATION_LABEL" />
+				
+				<field name="show_icons_2" type="radio" default="0" class="btn-group" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_SHOWICONS_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_SHOWICONS_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>	
+				</field>				
+				<field name="prepend_2" type="text" default="" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_PREPEND_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_PREPEND_DESC" />
+				<field name="info_2" type="list" default="none"
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_INFO_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_INFO_DESC">
+					<option value="none">JNONE</option>
+					<option value="hits">PLG_CONTENT_ARTICLEDETAILS_VALUE_HITS</option>
+					<option value="rating">PLG_CONTENT_ARTICLEDETAILS_VALUE_RATING</option>
+					<option value="author">PLG_CONTENT_ARTICLEDETAILS_VALUE_AUTHOR</option>
+					<option value="created">PLG_CONTENT_ARTICLEDETAILS_VALUE_CREATEDDATE</option>
+					<option value="modified">PLG_CONTENT_ARTICLEDETAILS_VALUE_MODIFIEDDATE</option>
+					<option value="published">PLG_CONTENT_ARTICLEDETAILS_VALUE_PUBLISHEDDATE</option>
+					<option value="finished">PLG_CONTENT_ARTICLEDETAILS_VALUE_FINISHEDDATE</option>
+					<option value="createdtime">PLG_CONTENT_ARTICLEDETAILS_VALUE_CREATEDTIME</option>
+					<option value="modifiedtime">PLG_CONTENT_ARTICLEDETAILS_VALUE_MODIFIEDTIME</option>
+					<option value="publishedtime">PLG_CONTENT_ARTICLEDETAILS_VALUE_PUBLISHEDTIME</option>
+					<option value="finishedtime">PLG_CONTENT_ARTICLEDETAILS_VALUE_FINISHEDTIME</option>
+					<option value="parentcategory">PLG_CONTENT_ARTICLEDETAILS_VALUE_PARENTCATEGORY</option>
+					<option value="category">PLG_CONTENT_ARTICLEDETAILS_VALUE_CATEGORY</option>
+					<option value="combocategories">PLG_CONTENT_ARTICLEDETAILS_VALUE_COMBOCATEGORIES</option>
+					<option value="tags">PLG_CONTENT_ARTICLEDETAILS_VALUE_TAGS</option>
+					<option value="linkedtags">PLG_CONTENT_ARTICLEDETAILS_VALUE_LINKEDTAGS</option>
+					<option value="keywords">PLG_CONTENT_ARTICLEDETAILS_VALUE_KEYWORDS</option>
+					<option value="newline">PLG_CONTENT_ARTICLEDETAILS_VALUE_NEWLINE</option>
+				</field>
+				
+				<field type="subtitle" title="PLG_CONTENT_ARTICLEDETAILS_INFORMATION_LABEL" />
+				
+				<field name="show_icons_3" type="radio" default="0" class="btn-group" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_SHOWICONS_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_SHOWICONS_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>	
+				</field>
+				<field name="prepend_3" type="text" default="" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_PREPEND_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_PREPEND_DESC" />
+				<field name="info_3" type="list" default="none"
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_INFO_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_INFO_DESC">
+					<option value="none">JNONE</option>
+					<option value="hits">PLG_CONTENT_ARTICLEDETAILS_VALUE_HITS</option>
+					<option value="rating">PLG_CONTENT_ARTICLEDETAILS_VALUE_RATING</option>
+					<option value="author">PLG_CONTENT_ARTICLEDETAILS_VALUE_AUTHOR</option>
+					<option value="created">PLG_CONTENT_ARTICLEDETAILS_VALUE_CREATEDDATE</option>
+					<option value="modified">PLG_CONTENT_ARTICLEDETAILS_VALUE_MODIFIEDDATE</option>
+					<option value="published">PLG_CONTENT_ARTICLEDETAILS_VALUE_PUBLISHEDDATE</option>
+					<option value="finished">PLG_CONTENT_ARTICLEDETAILS_VALUE_FINISHEDDATE</option>
+					<option value="createdtime">PLG_CONTENT_ARTICLEDETAILS_VALUE_CREATEDTIME</option>
+					<option value="modifiedtime">PLG_CONTENT_ARTICLEDETAILS_VALUE_MODIFIEDTIME</option>
+					<option value="publishedtime">PLG_CONTENT_ARTICLEDETAILS_VALUE_PUBLISHEDTIME</option>
+					<option value="finishedtime">PLG_CONTENT_ARTICLEDETAILS_VALUE_FINISHEDTIME</option>
+					<option value="parentcategory">PLG_CONTENT_ARTICLEDETAILS_VALUE_PARENTCATEGORY</option>
+					<option value="category">PLG_CONTENT_ARTICLEDETAILS_VALUE_CATEGORY</option>
+					<option value="combocategories">PLG_CONTENT_ARTICLEDETAILS_VALUE_COMBOCATEGORIES</option>
+					<option value="tags">PLG_CONTENT_ARTICLEDETAILS_VALUE_TAGS</option>
+					<option value="linkedtags">PLG_CONTENT_ARTICLEDETAILS_VALUE_LINKEDTAGS</option>
+					<option value="keywords">PLG_CONTENT_ARTICLEDETAILS_VALUE_KEYWORDS</option>
+					<option value="newline">PLG_CONTENT_ARTICLEDETAILS_VALUE_NEWLINE</option>
+				</field>
+				
+				<field type="subtitle" title="PLG_CONTENT_ARTICLEDETAILS_INFORMATION_LABEL" />
+				
+				<field name="show_icons_4" type="radio" default="0" class="btn-group" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_SHOWICONS_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_SHOWICONS_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>	
+				</field>
+				<field name="prepend_4" type="text" default="" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_PREPEND_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_PREPEND_DESC" />
+				<field name="info_4" type="list" default="none"
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_INFO_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_INFO_DESC">
+					<option value="none">JNONE</option>
+					<option value="hits">PLG_CONTENT_ARTICLEDETAILS_VALUE_HITS</option>
+					<option value="rating">PLG_CONTENT_ARTICLEDETAILS_VALUE_RATING</option>
+					<option value="author">PLG_CONTENT_ARTICLEDETAILS_VALUE_AUTHOR</option>
+					<option value="created">PLG_CONTENT_ARTICLEDETAILS_VALUE_CREATEDDATE</option>
+					<option value="modified">PLG_CONTENT_ARTICLEDETAILS_VALUE_MODIFIEDDATE</option>
+					<option value="published">PLG_CONTENT_ARTICLEDETAILS_VALUE_PUBLISHEDDATE</option>
+					<option value="finished">PLG_CONTENT_ARTICLEDETAILS_VALUE_FINISHEDDATE</option>
+					<option value="createdtime">PLG_CONTENT_ARTICLEDETAILS_VALUE_CREATEDTIME</option>
+					<option value="modifiedtime">PLG_CONTENT_ARTICLEDETAILS_VALUE_MODIFIEDTIME</option>
+					<option value="publishedtime">PLG_CONTENT_ARTICLEDETAILS_VALUE_PUBLISHEDTIME</option>
+					<option value="finishedtime">PLG_CONTENT_ARTICLEDETAILS_VALUE_FINISHEDTIME</option>
+					<option value="parentcategory">PLG_CONTENT_ARTICLEDETAILS_VALUE_PARENTCATEGORY</option>
+					<option value="category">PLG_CONTENT_ARTICLEDETAILS_VALUE_CATEGORY</option>
+					<option value="combocategories">PLG_CONTENT_ARTICLEDETAILS_VALUE_COMBOCATEGORIES</option>
+					<option value="tags">PLG_CONTENT_ARTICLEDETAILS_VALUE_TAGS</option>
+					<option value="linkedtags">PLG_CONTENT_ARTICLEDETAILS_VALUE_LINKEDTAGS</option>
+					<option value="keywords">PLG_CONTENT_ARTICLEDETAILS_VALUE_KEYWORDS</option>
+					<option value="newline">PLG_CONTENT_ARTICLEDETAILS_VALUE_NEWLINE</option>
+				</field>
+				
+				<field type="subtitle" title="PLG_CONTENT_ARTICLEDETAILS_INFORMATION_LABEL" />
+				
+				<field name="show_icons_5" type="radio" default="0" class="btn-group" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_SHOWICONS_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_SHOWICONS_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>	
+				</field>
+				<field name="prepend_5" type="text" default="" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_PREPEND_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_PREPEND_DESC" />
+				<field name="info_5" type="list" default="none"
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_INFO_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_INFO_DESC">
+					<option value="none">JNONE</option>
+					<option value="hits">PLG_CONTENT_ARTICLEDETAILS_VALUE_HITS</option>
+					<option value="rating">PLG_CONTENT_ARTICLEDETAILS_VALUE_RATING</option>
+					<option value="author">PLG_CONTENT_ARTICLEDETAILS_VALUE_AUTHOR</option>
+					<option value="created">PLG_CONTENT_ARTICLEDETAILS_VALUE_CREATEDDATE</option>
+					<option value="modified">PLG_CONTENT_ARTICLEDETAILS_VALUE_MODIFIEDDATE</option>
+					<option value="published">PLG_CONTENT_ARTICLEDETAILS_VALUE_PUBLISHEDDATE</option>
+					<option value="finished">PLG_CONTENT_ARTICLEDETAILS_VALUE_FINISHEDDATE</option>
+					<option value="createdtime">PLG_CONTENT_ARTICLEDETAILS_VALUE_CREATEDTIME</option>
+					<option value="modifiedtime">PLG_CONTENT_ARTICLEDETAILS_VALUE_MODIFIEDTIME</option>
+					<option value="publishedtime">PLG_CONTENT_ARTICLEDETAILS_VALUE_PUBLISHEDTIME</option>
+					<option value="finishedtime">PLG_CONTENT_ARTICLEDETAILS_VALUE_FINISHEDTIME</option>
+					<option value="parentcategory">PLG_CONTENT_ARTICLEDETAILS_VALUE_PARENTCATEGORY</option>
+					<option value="category">PLG_CONTENT_ARTICLEDETAILS_VALUE_CATEGORY</option>
+					<option value="combocategories">PLG_CONTENT_ARTICLEDETAILS_VALUE_COMBOCATEGORIES</option>
+					<option value="tags">PLG_CONTENT_ARTICLEDETAILS_VALUE_TAGS</option>
+					<option value="linkedtags">PLG_CONTENT_ARTICLEDETAILS_VALUE_LINKEDTAGS</option>
+					<option value="keywords">PLG_CONTENT_ARTICLEDETAILS_VALUE_KEYWORDS</option>
+					<option value="newline">PLG_CONTENT_ARTICLEDETAILS_VALUE_NEWLINE</option>
+				</field>
+				
+				<field type="subtitle" title="PLG_CONTENT_ARTICLEDETAILS_INFORMATION_LABEL" />
+				
+				<field name="show_icons_6" type="radio" default="0" class="btn-group" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_SHOWICONS_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_SHOWICONS_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>	
+				</field>
+				<field name="prepend_6" type="text" default="" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_PREPEND_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_PREPEND_DESC" />
+				<field name="info_6" type="list" default="none"
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_INFO_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_INFO_DESC">
+					<option value="none">JNONE</option>
+					<option value="hits">PLG_CONTENT_ARTICLEDETAILS_VALUE_HITS</option>
+					<option value="rating">PLG_CONTENT_ARTICLEDETAILS_VALUE_RATING</option>
+					<option value="author">PLG_CONTENT_ARTICLEDETAILS_VALUE_AUTHOR</option>
+					<option value="created">PLG_CONTENT_ARTICLEDETAILS_VALUE_CREATEDDATE</option>
+					<option value="modified">PLG_CONTENT_ARTICLEDETAILS_VALUE_MODIFIEDDATE</option>
+					<option value="published">PLG_CONTENT_ARTICLEDETAILS_VALUE_PUBLISHEDDATE</option>
+					<option value="finished">PLG_CONTENT_ARTICLEDETAILS_VALUE_FINISHEDDATE</option>
+					<option value="createdtime">PLG_CONTENT_ARTICLEDETAILS_VALUE_CREATEDTIME</option>
+					<option value="modifiedtime">PLG_CONTENT_ARTICLEDETAILS_VALUE_MODIFIEDTIME</option>
+					<option value="publishedtime">PLG_CONTENT_ARTICLEDETAILS_VALUE_PUBLISHEDTIME</option>
+					<option value="finishedtime">PLG_CONTENT_ARTICLEDETAILS_VALUE_FINISHEDTIME</option>
+					<option value="parentcategory">PLG_CONTENT_ARTICLEDETAILS_VALUE_PARENTCATEGORY</option>
+					<option value="category">PLG_CONTENT_ARTICLEDETAILS_VALUE_CATEGORY</option>
+					<option value="combocategories">PLG_CONTENT_ARTICLEDETAILS_VALUE_COMBOCATEGORIES</option>
+					<option value="tags">PLG_CONTENT_ARTICLEDETAILS_VALUE_TAGS</option>
+					<option value="linkedtags">PLG_CONTENT_ARTICLEDETAILS_VALUE_LINKEDTAGS</option>
+					<option value="keywords">PLG_CONTENT_ARTICLEDETAILS_VALUE_KEYWORDS</option>
+					<option value="newline">PLG_CONTENT_ARTICLEDETAILS_VALUE_NEWLINE</option>
+				</field>
+				
+				<field type="subtitle" title="PLG_CONTENT_ARTICLEDETAILS_INFORMATION_LABEL" />
+				
+				<field name="show_icons_7" type="radio" default="0" class="btn-group" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_SHOWICONS_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_SHOWICONS_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>	
+				</field>
+				<field name="prepend_7" type="text" default="" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_PREPEND_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_PREPEND_DESC" />
+				<field name="info_7" type="list" default="none"
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_INFO_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_INFO_DESC">
+					<option value="none">JNONE</option>
+					<option value="hits">PLG_CONTENT_ARTICLEDETAILS_VALUE_HITS</option>
+					<option value="rating">PLG_CONTENT_ARTICLEDETAILS_VALUE_RATING</option>
+					<option value="author">PLG_CONTENT_ARTICLEDETAILS_VALUE_AUTHOR</option>
+					<option value="created">PLG_CONTENT_ARTICLEDETAILS_VALUE_CREATEDDATE</option>
+					<option value="modified">PLG_CONTENT_ARTICLEDETAILS_VALUE_MODIFIEDDATE</option>
+					<option value="published">PLG_CONTENT_ARTICLEDETAILS_VALUE_PUBLISHEDDATE</option>
+					<option value="finished">PLG_CONTENT_ARTICLEDETAILS_VALUE_FINISHEDDATE</option>
+					<option value="createdtime">PLG_CONTENT_ARTICLEDETAILS_VALUE_CREATEDTIME</option>
+					<option value="modifiedtime">PLG_CONTENT_ARTICLEDETAILS_VALUE_MODIFIEDTIME</option>
+					<option value="publishedtime">PLG_CONTENT_ARTICLEDETAILS_VALUE_PUBLISHEDTIME</option>
+					<option value="finishedtime">PLG_CONTENT_ARTICLEDETAILS_VALUE_FINISHEDTIME</option>
+					<option value="parentcategory">PLG_CONTENT_ARTICLEDETAILS_VALUE_PARENTCATEGORY</option>
+					<option value="category">PLG_CONTENT_ARTICLEDETAILS_VALUE_CATEGORY</option>
+					<option value="combocategories">PLG_CONTENT_ARTICLEDETAILS_VALUE_COMBOCATEGORIES</option>
+					<option value="tags">PLG_CONTENT_ARTICLEDETAILS_VALUE_TAGS</option>
+					<option value="linkedtags">PLG_CONTENT_ARTICLEDETAILS_VALUE_LINKEDTAGS</option>
+					<option value="keywords">PLG_CONTENT_ARTICLEDETAILS_VALUE_KEYWORDS</option>
+					<option value="newline">PLG_CONTENT_ARTICLEDETAILS_VALUE_NEWLINE</option>
+				</field>
+				
+				<field type="subtitle" title="PLG_CONTENT_ARTICLEDETAILS_ICONS_LABEL" />
+				
+				<field name="iconscolor" type="colorpicker" default="#000000" 
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_ICONSCOLOR_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_ICONSCOLOR_DESC" />
+				
+				<field type="message" text="PLG_CONTENT_ARTICLEDETAILS_MESSAGE_ICONSLICENSE" style="example" label="PLG_CONTENT_ARTICLEDETAILS_EXAMPLE_LICENSE_LABEL" />
+				
+				<field type="title" title="PLG_CONTENT_ARTICLEDETAILS_FORMATTINGS_LABEL" />
+					
+				<field type="message" text="PLG_CONTENT_ARTICLEDETAILS_INFO_FORMATINFO" style="info" />		
+				
+				<field type="subtitle" title="PLG_CONTENT_ARTICLEDETAILS_DATE_LABEL" />
+				
+				<field name="show_d" type="list" default="date" 
+		           	label="PLG_CONTENT_ARTICLEDETAILS_FIELD_SHOWDATE_LABEL" 
+		           	description="PLG_CONTENT_ARTICLEDETAILS_FIELD_SHOWDATE_DESC">
+					<!-- <option value="none">PLG_CONTENT_ARTICLEDETAILS_VALUE_NONE</option> -->
+					<option value="date">PLG_CONTENT_ARTICLEDETAILS_VALUE_DATE</option>
+					<option value="ago">PLG_CONTENT_ARTICLEDETAILS_VALUE_AGO</option>
+					<option value="agomhd">PLG_CONTENT_ARTICLEDETAILS_VALUE_AGOMHD</option>
+					<option value="agohm">PLG_CONTENT_ARTICLEDETAILS_VALUE_AGOHM</option>
+				</field>
+				
+				<field name="d_format" type="text" default="d F Y" filter="raw"
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_DATEFORMAT_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_DATEFORMAT_DESC" />	
+					
+				<field type="subtitle" title="PLG_CONTENT_ARTICLEDETAILS_TIME_LABEL" />
+				
+				<field name="t_format" type="text" default="H:i" filter="raw"
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_TIMEFORMAT_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_TIMEFORMAT_DESC" />				
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="style_overrides" type="textarea" cols="40" rows="3" default="" filter="raw" 
+	            	label="PLG_CONTENT_ARTICLEDETAILS_FIELD_STYLEOVERRIDES_LABEL" 
+	            	description="PLG_CONTENT_ARTICLEDETAILS_FIELD_STYLEOVERRIDES_DESC" />
+	            <field type="message" text="PLG_CONTENT_ARTICLEDETAILS_EXAMPLE_EXTRACSS" style="example" label="PLG_CONTENT_ARTICLEDETAILS_EXAMPLE_EXTRACSS_LABEL" />
+	            
+	            <field type="title" title="PLG_CONTENT_ARTICLEDETAILS_ELEMENTSOVERRIDES_LABEL" />
+	            
+	            <field name="title_element" type="text" default=".item-page h2,.items-leading h2,.items-row h2" filter="raw"
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_TITLEOVERRIDES_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_TITLEOVERRIDES_DESC" />
+					
+				<field name="info_element" type="text" default=".article-info" filter="raw"
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_INFOOVERRIDES_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_INFOOVERRIDES_DESC" />
+	            
+	            <field name="tags_element" type="text" default="" filter="raw"
+					label="PLG_CONTENT_ARTICLEDETAILS_FIELD_TAGSOVERRIDES_LABEL" 
+					description="PLG_CONTENT_ARTICLEDETAILS_FIELD_TAGSOVERRIDES_DESC" />	
+				<field type="message" text="PLG_CONTENT_ARTICLEDETAILS_EXAMPLE_TAGSOVERRIDES" style="example" label="PLG_CONTENT_ARTICLEDETAILS_EXAMPLE_EXTRACSS_LABEL" />			
+			</fieldset>
+   		</fields>
+   </config>
+</extension>

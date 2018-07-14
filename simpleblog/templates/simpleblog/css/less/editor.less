@@ -1,0 +1,83 @@
+
+@import "lib/vars.less"; 
+
+div.mce-panel{
+  background-color: @editor;
+  background-image:none;
+}
+
+div.mce-btn {
+    text-shadow: none;
+    border-radius: 0;
+    box-shadow: none;
+    background-color: @editor;
+    background-image: none;
+}
+
+div.mce-btn-group .mce-first,div.mce-btn-group .mce-last,
+div.mce-btn-group .mce-first.mce-last{
+  border-radius: 0;
+  border:none;
+}
+
+div.mce-btn-group .mce-btn{
+  border-radius: 0;
+  border:none;
+}
+div.mce-btn-group .mce-first{
+  border-left: 1px solid #aaa;
+}
+.mce-container.mce-first.mce-flow-layout-item .mce-btn.mce-first{
+  border-left: none;
+}
+
+div.mce-btn:hover, .mce-btn:focus{
+  text-shadow: none;
+  border-radius: 0;
+  box-shadow: none;
+  background-color: #fff;
+  background-image: none;
+}
+
+div.mce-menu{
+  border-radius: 0;
+  box-shadow: none;
+  /*box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);*/
+}
+
+#editor .control-group{
+  display:inline-block;
+  margin-right: 1em;
+}
+
+#editor button:hover{
+  border:none;
+}
+
+div.chzn-container-single .chzn-single{
+  border: 1px solid #AAA;
+  border-radius: 3px;
+  background: @btn;
+  box-shadow: none;
+  color: #444;
+}
+
+div.chzn-container-multi .chzn-choices{
+  border: 1px solid #AAA;
+  background-color: #FFF;
+  background-image: none;
+  cursor: text;
+}
+
+div.chzn-container-active.chzn-with-drop .chzn-single {
+    border: 1px solid #AAA;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    background-image: none;
+}
+
+div.chzn-container .chzn-results li.highlighted {
+    background-color: @btnPrimary;
+    background-image: none;
+    color: #FFF;
+}

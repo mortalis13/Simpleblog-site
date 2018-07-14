@@ -1,0 +1,22 @@
+/*@fontFamily:'Noto Sans', Helvetica, Arial, sans-serif;*/
+/*@fontFamily:'Raleway', Helvetica, Arial, sans-serif;*/
+/*@mdMin:1030px;
+@mdMax:1199px;*/
+.bodyBackground {
+  background-image: linear-gradient(to bottom, #efefef, #acacac);
+}
+.inputShadow {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 5px rgba(128, 128, 128, 0.6);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 5px rgba(128, 128, 128, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 5px rgba(128, 128, 128, 0.6);
+}
+@media (max-width: 520px) {
+  #jc #comments-form p label {
+    float: left;
+    margin-right: 10px;
+  }
+  #jc #comments-form p textarea,
+  #jc #comments-form p .grippie {
+    width: 90%;
+  }
+}

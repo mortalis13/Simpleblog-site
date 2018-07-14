@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="community" method="upgrade">
+	<name>My Badges</name>
+	<author>Maverick</author>
+	<creationDate>26-Mar-2014</creationDate>
+	<copyright>Copyright (C) 2009-14. All rights reserved.</copyright>
+	<license>http://www.corejoomla.com</license>
+	<authorEmail>support@corejoomla.com</authorEmail>
+	<authorUrl>www.corejoomla.com</authorUrl>
+	<version>1.0.0</version>
+	<isapplication>true</isapplication>
+	<description>Displays the the badges earned by a user in his profile page.</description>
+	<files>
+		<file plugin="jsbadges">jsbadges.php</file>
+		<file>jsbadges.xml</file>
+	</files>
+     <languages>
+        <language tag="en-GB">en-GB.plg_community_jsbadges.ini</language>
+    </languages>
+		<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="cache" type="list" default="0" label="Enable caching" description="Cache data">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="coreapp" type="list" default="0" label="Core Application" description="Causes this application to not appearin the users applications list but it will allow this application to appear in the user profile automatically if selected.">
+					<option value="0">No</option>
+					<option value="1">Yes</option>
+				</field>
+				<field name="position" type="list" default="content" label="Avalaible Positions" description="Select one or more available positions from the list.  You can use Ctrl-click to select more than one item.">
+					<option value="content">Content</option>
+					<option value="sidebar-top">Sidebar Top</option>
+					<option value="sidebar-bottom">Sidebar Bottom</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

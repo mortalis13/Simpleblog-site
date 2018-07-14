@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="content">
+	<name>Content - Test</name>
+	<author>mortalis</author>
+	<creationDate>February 2015</creationDate>
+	<copyright>Copyright (C) 2015</copyright>
+	<license>GPL2</license>
+	<authorEmail>stangerroman@gmail.com</authorEmail>
+	<version>1.0.0</version>
+	<description>Content Test</description>
+	<files>
+		<filename plugin="test">test.php</filename>
+		<filename>index.html</filename>
+	</files>
+</extension>

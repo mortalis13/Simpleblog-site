@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.3" type="plugin" group="system">
+	<name>Content - Test1</name>
+	<author>Explore California</author>
+	<creationDate>April 2011</creationDate>
+	<copyright>Copyright (C) 2011</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<authorEmail>code@explorecalifornia.org</authorEmail>
+	<authorUrl>www.explorecalifornia.org</authorUrl>
+	<version>1.0</version>
+	<description>A plugin that turns the word 'activity' into a link to the activities page.</description>
+
+	<files>
+		<filename plugin="test1">test1.php</filename>
+		<filename>index.html</filename>
+	</files>
+
+	<config />
+</extension>
